@@ -4,27 +4,28 @@
 \alias{freesurferToMatrix}
 \title{Read freesurfer files into a Matrix}
 \usage{
-freesurferToMatrix(freesurferFileNames, valuetype = "thickness")
+freesurferToMatrix(freesurferFileNames)
 }
 \arguments{
-\item{valuetype}{for example "thickness"}
+\item{freesurferFileNames}{a list of filenames pointing to freesurfer data}
 }
 \value{
 A matrix containing the freesurfer data.
 }
 \description{
 Read freesurfer files into rows of a matrix, given a valuetype i.e. something
-stored in a freesurfer vertex or surface file.
+stored in a freesurfer vertex or surface data file.
 }
 \examples{
 
-# TODO
+if ( freesurfer::have_fs( ) ) {
+  fname = file.path( freesurfer::fs_subj_dir(), "bert", "surf", "lh.thickness")
+  thfns = c( fname, fname )
+  mat = freesurferToMatrix( thfns )
+  }
 
 }
 \author{
 Avants BB
-}
-\seealso{
-\code{\link{imagesToMatrix}, \link{getMask}}
 }
 
