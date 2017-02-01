@@ -13,6 +13,16 @@
 #'   thfns = c( fname, fname )
 #'   mat = freesurferToMatrix( thfns )
 #'   }
+#' \dontrun{
+#' xs = scale( x , center = TRUE, scale = FALSE )
+#' smat = sparseDistanceMatrix( xs, k = 10, kmetric = "covariance",
+#'   eps = 1e-06, mypkg = "rflann")
+#' mydecom = irlba::irlba( smat, nv = 5 )
+#' myproj = x %*% mydecom$v
+#' pheatmap::pheatmap( cor( myproj ) )
+#' hist( abs( mydecom$v[,1] )[ abs( mydecom$v[,1] )>1.e-4] )
+#' # same kind of thing with sparseDistanceMatrixXY
+#' }
 #'
 #' @export freesurferToMatrix
 freesurferToMatrix <- function( freesurferFileNames ) {
