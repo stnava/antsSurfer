@@ -1,0 +1,12 @@
+Package: antsSurfer
+Type: Package
+Title: Simple freesurfer utilities
+Version: 1.0
+Date: 2017-2-1
+Author: Brian B. Avants
+Maintainer: Brian B. Avants <stnava@gmail.com>
+Description: This package will hold basic utilities for looking at freesurfer data.
+License: Apache License 2.0
+Depends: freesurfer, ANTsR
+Additional_repositories: https://github.com/stnava/ANTsR.git
+RoxygenNote: 5.0.1
