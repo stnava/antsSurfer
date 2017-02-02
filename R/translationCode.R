@@ -15,8 +15,7 @@
 #'   }
 #' \dontrun{
 #' xs = scale( x , center = TRUE, scale = FALSE )
-#' smat = sparseDistanceMatrix( xs, k = 10, kmetric = "covariance",
-#'   eps = 1e-06, mypkg = "rflann")
+#' smat = sparseDistanceMatrix( xs, k = 10, kmetric = "covariance" )
 #' mydecom = irlba::irlba( smat, nv = 5 )
 #' myproj = x %*% mydecom$v
 #' pheatmap::pheatmap( cor( myproj ) )
